@@ -1,7 +1,7 @@
 {
   "name": "npm-xlsx-style-correct",
-  "version": "1.0.1",
-  "description": "O objetivo desse pacote eh corrigir o bug da biblioteca xlsx-style",
+  "version": "1.0.2",
+  "description": "xlsx-style",
   "main": "./xlsx",
   "dependencies": {
     "ssf":"~0.8.1",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luizotavioautomacao/xlsx-style-correct.git"
+    "url": "git+https://github.com/ekranis/xlsx-style-correct.git"
   },
   "keywords": [
     "excel",
@@ -43,11 +43,11 @@
   "bin": {
 		"xlsx": "./bin/xlsx.njs"
 	},
-  "author": "Luiz Otavio Mendes de Oliveira <luizotavioautomacao@gmail.com>",
+  "author": "<inushkin_mv@ekra.ru>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/luizotavioautomacao/xlsx-style-correct/issues"
   },
-  "homepage": "https://github.com/luizotavioautomacao/xlsx-style-correct#readme",
+  "homepage": "https://github.com/ekranis/xlsx-style-correct#readme",
   "engines": { "node": ">=0.8" }
 }

@@ -3,19 +3,20 @@
 # xlsx-style
 
 # About this fork
-**NOTE:** [This project](https://github.com/luizotavioautomacao/xlsx-style-correct) is a fork of the original [xlsx-style](https://www.npmjs.com/package/xlsx-style) project.
+**NOTE:** [This project](https://github.com/ekranis/xlsx-style-correct) is a fork of the original [xlsx-style-correct](https://github.com/luizotavioautomacao/xlsx-style-correct) project.
 
 # Goal
 Fix the problem:
 ERROR in ./node_modules/xlsx-style/dist/cpexcel.js
 Module not found: Error: Can't resolve './cptable' in '/opt/build/repo/node_modules/xlsx-style/dist'
 
+And support for openpyxl library styles
 ## Installation
 
 With [npm](https://www.npmjs.org/package/xlsx-style-correct):
 
 ```sh
-npm install xlsx-style-correct --save
+npm install npm-xlsx-style-correct --save
 ```
 
 
