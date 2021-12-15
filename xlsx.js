@@ -4742,16 +4742,31 @@ function parse_fonts(t, opts) {
       case '<b/>':
         font.bold = true;
         break;
+      case '<b':
+        font.bold = true;
+        break;
       case '<u/>':
+        font.underline = true;
+        break;
+      case '<u':
         font.underline = true;
         break;
       case '<i/>':
         font.italic = true;
         break;
+      case '<i':
+        font.italic = true;
+        break;
       case '<strike/>':
         font.strike = true;
         break;
+      case '<strike':
+        font.strike = true;
+        break;
       case '<outline/>':
+        font.outline = true;
+        break;
+      case '<outline':
         font.outline = true;
         break;
       case '<shadow/>':
