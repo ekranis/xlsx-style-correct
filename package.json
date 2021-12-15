@@ -1,5 +1,5 @@
 {
-  "name": "xlsx-style-correct",
+  "name": "npm-xlsx-style-correct",
   "version": "1.0.1",
   "description": "O objetivo desse pacote eh corrigir o bug da biblioteca xlsx-style",
   "main": "./xlsx",
