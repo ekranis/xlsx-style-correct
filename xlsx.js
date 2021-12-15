@@ -7,7 +7,7 @@ var XLSX = {};
 XLSX.version = '0.8.11';
 var current_codepage = 1200, current_cptable;
 if(typeof module !== "undefined" && typeof require !== 'undefined') {
-	if(typeof cptable === 'undefined') cptable = require('./dist/cpexcel');
+	if(typeof cptable === 'undefined') global.cptable = require('./dist/cpexcel');
 	current_cptable = cptable[current_codepage];
 }
 function reset_cp() { set_cp(1200); }
@@ -1435,8 +1435,7 @@ if(has_buf) {
 			if(ww !== 0) { out[k++] = ww&255; out[k++] = ww>>>8; ww = 0; }
 			out[k++] = w%256; out[k++] = w>>>8;
 		}
-		out.length = k;
-		return out.toString('ucs2');
+		return out.slice(0,k).toString('ucs2');
 	};
 	var corpus = "foo bar baz\u00e2\u0098\u0083\u00f0\u009f\u008d\u00a3";
 	if(utf8read(corpus) == utf8readb(corpus)) utf8read = utf8readb;
@@ -12062,7 +12061,7 @@ var XmlNode = (function () {
     return this;
   }
 
-  var APOS = "'"; QUOTE = '"'
+	var APOS = "'"; var QUOTE = '"';
   var ESCAPED_QUOTE = {  }
   ESCAPED_QUOTE[QUOTE] = '&quot;'
   ESCAPED_QUOTE[APOS] = '&apos;'
