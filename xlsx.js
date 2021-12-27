@@ -4605,17 +4605,16 @@ function rgb_tint(hex, tint) {
 }
 
 /* 18.3.1.13 width calculations */
-var DEF_MDW = 7, MAX_MDW = 15, MIN_MDW = 1, MDW = DEF_MDW;
-function width2px(width) { return (( width + ((128/MDW)|0)/256 )* MDW )|0; }
-function px2char(px) { return (((px - 5)/MDW * 100 + 0.5)|0)/100; }
-function char2width(chr) { return (((chr * MDW + 5)/MDW*256)|0)/256; }
+var DEF_MDW = 6, MAX_MDW = 15, MIN_MDW = 1, MDW = DEF_MDW;
+function width2px(width) { return Math.floor(( width + (Math.round(128/MDW))/256 )* MDW ); }
+function px2char(px) { return (Math.floor((px - 5)/MDW * 100 + 0.5))/100; }
+function char2width(chr) { return (Math.round((chr * MDW + 5)/MDW*256))/256; }
 function cycle_width(collw) { return char2width(px2char(width2px(collw))); }
-function find_mdw(collw, coll) {
-	if(cycle_width(collw) != collw) {
-		for(MDW=DEF_MDW; MDW>MIN_MDW; --MDW) if(cycle_width(collw) === collw) break;
-		if(MDW === MIN_MDW) for(MDW=DEF_MDW+1; MDW<MAX_MDW; ++MDW) if(cycle_width(collw) === collw) break;
-		if(MDW === MAX_MDW) MDW = DEF_MDW;
-	}
+/* XLSX/XLSB/XLS specify width in units of MDW */
+function find_mdw(collw) {
+	var delta = Math.abs(collw - cycle_width(collw)), _MDW = MDW;
+	if(delta > 0.005) for(MDW=MIN_MDW; MDW<MAX_MDW; ++MDW) if(Math.abs(collw - cycle_width(collw)) <= delta) { delta = Math.abs(collw - cycle_width(collw)); _MDW = MDW; }
+	MDW = _MDW;
 }
 
 /* [MS-EXSPXML3] 2.4.54 ST_enmPattern */
