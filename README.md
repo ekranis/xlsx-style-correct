@@ -13,7 +13,7 @@ Module not found: Error: Can't resolve './cptable' in '/opt/build/repo/node_modu
 And support for openpyxl library styles
 ## Installation
 
-With [npm](https://www.npmjs.org/package/xlsx-style-correct):
+With [npm](https://www.npmjs.com/package/npm-xlsx-style-correct):
 
 ```sh
 npm install npm-xlsx-style-correct --save
